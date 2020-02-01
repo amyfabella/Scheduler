@@ -30,10 +30,138 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
+      <!-- html help from https://stackoverflow.com/questions/59995703/trying-to-change-background-color-based-off-if-the-hour-is-in-the-past-current-->
+      <div class="time-block">
+        <div class="row">
+            <div class="col-2 hour"> 8am
+            </div>
+            <div class="col-8 scheduler past present future" data-value="8:00:00">
+              <input id="8amInput" class="textarea bg-transparent" type="text" placeholder="Add event">
+            </div>
+            <div class="col-2 save">
+              <button type="button" id="8amButton" class="btn btn-primary saveBtn">Save</button>
+           </div>
+        </div>
+      </div>
+      
+      <div class="time-block">
+        <div class="row">
+            <div class="col-2 hour"> 9am
+            </div>
+            <div class="col-8 scheduler past present future" data-value="9:00:00">
+              <input id="9amInput" class="textarea bg-transparent" type="text" placeholder="Add event">
+            </div>
+            <div class="col-2 save">
+              <button type="button" id="9amButton" class="btn btn-primary saveBtn">Save</button>
+           </div>
+        </div>
+      </div>
 
+      <div class="time-block">
+        <div class="row">
+            <div class="col-2 hour"> 10am
+            </div>
+            <div class="col-8 scheduler past present future" data-value="10:00:00">
+              <input id="10amInput" class="textarea bg-transparent" type="text" placeholder="Add event">
+            </div>
+            <div class="col-2 save">
+              <button type="button" id="10amButton" class="btn btn-primary saveBtn">Save</button>
+           </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="row">
+            <div class="col-2 hour"> 11am
+            </div>
+            <div class="col-8 scheduler past present future" data-value="11:00:00">
+              <input id="11amInput" class="textarea bg-transparent" type="text" placeholder="Add event">
+            </div>
+            <div class="col-2 save">
+              <button type="button" id="11amButton" class="btn btn-primary saveBtn">Save</button>
+           </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="row">
+            <div class="col-2 hour"> 12pm
+            </div>
+            <div class="col-8 scheduler past present future" data-value="12:00:00">
+              <input id="12pmInput" class="textarea bg-transparent" type="text" placeholder="Add event">
+            </div>
+            <div class="col-2 save">
+              <button type="button" id="12pmButton" class="btn btn-primary saveBtn">Save</button>
+           </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="row">
+            <div class="col-2 hour"> 1pm
+            </div>
+            <div class="col-8 scheduler past present future" data-value="13:00:00">
+              <input id="1pmInput" class="textarea bg-transparent" type="text" placeholder="Add event">
+            </div>
+            <div class="col-2 save">
+              <button type="button" id="1pmButton" class="btn btn-primary saveBtn">Save</button>
+           </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="row">
+            <div class="col-2 hour"> 2pm
+            </div>
+            <div class="col-8 scheduler past present future" data-value="14:00:00">
+              <input id="2pmInput" class="textarea bg-transparent" type="text" placeholder="Add event">
+            </div>
+            <div class="col-2 save">
+              <button type="button" id="2pmButton" class="btn btn-primary saveBtn">Save</button>
+           </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="row">
+            <div class="col-2 hour"> 3pm
+            </div>
+            <div class="col-8 scheduler past present future" data-value="15:00:00">
+              <input id="3pmInput" class="textarea bg-transparent" type="text" placeholder="Add event">
+            </div>
+            <div class="col-2 save">
+              <button type="button" id="3pmButton" class="btn btn-primary saveBtn">Save</button>
+           </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="row">
+            <div class="col-2 hour"> 4pm
+            </div>
+            <div class="col-8 scheduler past present future" data-value="16:00:00">
+              <input id="4pmInput" class="textarea bg-transparent" type="text" placeholder="Add event">
+            </div>
+            <div class="col-2 save">
+              <button type="button" id="4pmButton" class="btn btn-primary saveBtn">Save</button>
+           </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="row">
+            <div class="col-2 hour"> 5pm
+            </div>
+            <div class="col-8 scheduler past present future" data-value="16:00:00">
+              <input id="5pmInput" class="textarea bg-transparent" type="text" placeholder="Add event">
+            </div>
+            <div class="col-2 save">
+              <button type="button" id="5pmButton" class="btn btn-primary saveBtn">Save</button>
+           </div>
+        </div>
+      </div>
       
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -41,16 +169,56 @@
     //GIVEN I am using a daily planner to create a schedule
     //WHEN I open the planner
     //THEN the current day is displayed at the top of the calendar
+    //help from https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-1.php
+    var today = new Date();
+    var date = today.getFullYear()+ " . " + (today.getMonth()+1)+ " . " + today.getDate();
+    $("#currentDay").text(date);
+
     //WHEN I scroll down
     //THEN I am presented with timeblocks for standard business hours
+
     //WHEN I view the timeblocks for that day
     //THEN each timeblock is color coded to indicate whether it is in the past, present, or future
+    //help from https://tecadmin.net/get-current-date-time-javascript/
+    var time = today.getHours() + " " + today.getMinutes() + " " + today.getSeconds();
+    var timeBlock = $(".scheduler").data();
+    //past gray
+    var past = $(".past");
+    //present red
+    var present = $(".present");
+    //future green
+    var future = $(".future");
+    
+    if (time > (timeBlock + 1)) {
+        $(past).css("display", "style");
+    }
+    else if (time < timeBlock) {
+        $(future).css("display", "style");
+    }
+    else {
+        $(present).css("display", "style");
+    }
+
+
     //WHEN I click into a timeblock
     //THEN I can enter an event
+
     //WHEN I click the save button for that timeblock
     //THEN the text for that event is saved in local storage
+    $(".saveBtn").on("click", function(){
+        var input = $(".textarea");
+        var storedInput = localStorage.getItem("server");
+
+        localStorage.setItem("server", input.val());
+        $(".scheduler").text(storedInput);
+
+    });
+
     //WHEN I refresh the page
     //THEN the saved events persist
+    $(document).on("click", function(event){
+        event.preventDefault();
+    });
     </script>
 
   </body>
