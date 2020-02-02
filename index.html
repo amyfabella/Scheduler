@@ -216,25 +216,24 @@
 
             console.log(inputId);
             
-            for (let index = 0; index < schedulerArr.length; index++) {
-                const input = schedulerArr[index].children[0].value;
-                if (input == " "){
-                    continue;
-                }else{
-                    window.localStorage.setItem(schedulerArr[index].id, input);
-                    $(inputId).text(window.localStorage.getItem(input));
-                }
+            //for (let index = 0; index < schedulerArr.length; index++) {
+                //const input = schedulerArr[index].children[0].value;
+                //if (input == " "){
+                    //continue;
+                //}else{
+                    //window.localStorage.setItem(schedulerArr[index].id, input);
+                    //$(inputId).text(window.localStorage.getItem(input));
+                //}
                 
-            }
-            // console.log(time);
-            //  8amBtn
-            // 8am + "Input
-            //var textEl = $(".textarea");
-           // var input = localStorage.getItem("input");
+            //}
+        
+            var textEl = $(".textarea");
+            var input = localStorage.getItem(inputId);
 
            // textEl.textContent = input;
-           // localStorage.setItem($(this).attr('id'), textEl.val());
-            // $(".textarea").text(input);
+            localStorage.setItem(inputId, textEl.val());
+            $(".textarea").text(inputId);
+            console.log(textEl.val());
 
 
         });
