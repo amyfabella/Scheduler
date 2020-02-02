@@ -226,14 +226,17 @@
                 //}
                 
             //}
-        
-            var textEl = $(".textarea");
-            var input = localStorage.getItem(inputId);
+            
+            var input = $(inputId).textContent;
+            var storedInput = localStorage.getItem("input");
+            localStorage.setItem("input", input);
 
+            //var textEl = $(".textarea");
+           // var input = localStorage.getItem("input");
            // textEl.textContent = input;
-            localStorage.setItem(inputId, textEl.val());
-            $(".textarea").text(inputId);
-            console.log(textEl.val());
+           // localStorage.setItem($(this).attr('id'), textEl.val());
+            // $(".textarea").text(input);
+
 
 
         });
