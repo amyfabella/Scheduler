@@ -1,5 +1,7 @@
 # Scheduler
 A simple calendar app for scheduling your work day
+## Link
+https://amyfabella.github.io/Scheduler/
 ## Built With
 * Visual Studio Code
 * HTML
